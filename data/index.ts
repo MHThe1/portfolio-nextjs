@@ -175,13 +175,16 @@ export const navItems = [
     {
       id: 1,
       img: "/git.svg",
+      link: "https://github.com/MHThe1",
     },
     {
       id: 2,
       img: "/twit.svg",
+      link: "https://twitter.com/mh_the1",
     },
     {
       id: 3,
       img: "/link.svg",
+      link: "https://www.linkedin.com/in/mehedi-hasan-tanvir-5507b0228/",
     },
   ];
