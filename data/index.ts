@@ -1,7 +1,7 @@
 export const navItems = [
     { name: "About", link: "#about" },
     { name: "Projects", link: "#projects" },
-    { name: "Testimonials", link: "#testimonials" },
+    { name: "Philosophies", link: "#philosophies" },
     { name: "Contact", link: "#contact" },
   ];
   
@@ -140,32 +140,32 @@ export const navItems = [
     },
   ];
   
-  export const workExperience = [
+  export const experiences = [
     {
       id: 1,
-      title: "Frontend Engineer Intern",
-      desc: "Assisted in the development of a web-based platform using React.js, enhancing interactivity.",
+      title: "Frontend Development",
+      desc: "Started my frontend journey recently with ReactJS, and cacting up super quick!",
       className: "md:col-span-2",
       thumbnail: "/exp1.svg",
     },
     {
       id: 2,
-      title: "Mobile App Dev - JSM Tech",
-      desc: "Designed and developed mobile app for both iOS & Android platforms using React Native.",
-      className: "md:col-span-2", // change to md:col-span-2
+      title: "Backend Development",
+      desc: "I have been working with Flask, Django, RESTAPI for the past 3 years and recently I've started using NextJS as well.",
+      className: "md:col-span-2",
       thumbnail: "/exp2.svg",
     },
     {
       id: 3,
-      title: "Freelance App Dev Project",
-      desc: "Led the dev of a mobile app for a client, from initial concept to deployment on app stores.",
-      className: "md:col-span-2", // change to md:col-span-2
+      title: "Competetive Programming",
+      desc: "I sometimes dive into the world of competitive programming and solve problems in C++ and sometimes Python.",
+      className: "md:col-span-2",
       thumbnail: "/exp3.svg",
     },
     {
       id: 4,
-      title: "Lead Frontend Developer",
-      desc: "Developed and maintained user-facing features using modern frontend technologies.",
+      title: "An early bird",
+      desc: "I have been on the web design space since 2015, when I was in high school. I used to design websites in Wapka.",
       className: "md:col-span-2",
       thumbnail: "/exp4.svg",
     },
