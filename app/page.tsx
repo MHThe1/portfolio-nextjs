@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 
 import Landing from "@/components/Landing";
 
-import { FloatingNav } from "@/components/ui/FloatingNav";
+import NavBar from "@/components/ui/Navbar";
 import { navItems } from "@/data";
 
 export default function Home() {
@@ -15,7 +15,7 @@ export default function Home() {
       justify-center items-center flex-col overflow-clip
       mx-auto sm:px-10 px-5">
       <div className="max-w-7xl w-full">
-        <FloatingNav navItems={navItems} />
+        <NavBar navItems={navItems} />
         <Landing />
         <Grid />
         <RecentProjects />

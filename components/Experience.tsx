@@ -6,7 +6,7 @@ import exp from "constants";
 
 const Experience = () => {
   return (
-    <div className="py-20 w-full">
+    <div className="py-20 w-full" id="experiences">
       <h1 className="heading">
         My <span className="text-purple">experience</span>
       </h1>

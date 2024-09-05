@@ -45,7 +45,7 @@ export default function Landing() {
               <Button
                 variant="outline"
                 size="lg"
-                className="group relative overflow-hidden transition-all duration-300 ease-out hover:bg-primary hover:text-primary-foreground"
+                className="group relative overflow-hidden transition-all duration-300 ease-out bg-purple text-black-100 hover:bg-primary hover:text-primary-foreground"
                 onClick={() => window.location.href = 'mailto:mehedihtanvir@gmail.com'}
               >
                 <span className="relative z-10">Email Me</span>
@@ -54,7 +54,7 @@ export default function Landing() {
               <Button
                 variant="outline"
                 size="lg"
-                className="group relative overflow-hidden transition-all duration-300 ease-out hover:bg-primary hover:text-primary-foreground"
+                className="group relative overflow-hidden transition-all duration-300 ease-out bg-purple text-black-100 hover:bg-primary hover:text-primary-foreground"
                 onClick={() => window.open('https://github.com/MHThe1', '_blank')}
               >
                 <span className="relative z-10">GitHub</span>
