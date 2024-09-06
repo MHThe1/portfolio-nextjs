@@ -55,7 +55,7 @@ export default function Landing() {
                 </span>
               </h1>
               <h1 className="text-2xl sm:text-5xl font-bold md:mb-1">
-                I'm <strong className="text-purple-400">Mehedi Hasan Tanvir</strong>
+                I&apos;m <strong className="text-purple-400">Mehedi Hasan Tanvir</strong>
               </h1>
               <div className="flex justify-center md:justify-start">
                 <TypewriterEffect />

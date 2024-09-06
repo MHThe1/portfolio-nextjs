@@ -4,6 +4,7 @@ import React from "react";
 import { cn } from "@/utils/cn";
 import { motion } from "framer-motion";
 import BackgroundGrid from "./ui/BackgroundGrid";
+import Image from "next/image";
 
 const BentoGrid = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -56,10 +57,12 @@ const SkillIcon = ({ name }: { name: string }) => {
   };
 
   return (
-    <img
+    <Image
       src={iconMap[name] || "/icons/default.svg"}
       alt={name}
-      className="w-8 h-8 mr-2 inline-block"
+      width={32}
+      height={32}
+      className="mr-2 inline-block"
     />
   );
 };
