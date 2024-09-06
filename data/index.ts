@@ -76,7 +76,7 @@ export const navItems = [
       title: "Automate-Routine for BRACU Students",
       des: "Pre Registration is a mess, and I wanted to make it easier to get the perfect combination of course and sections for each student. So I built this app with React.js in the frontend and Django REST API in the backend.",
       img: "/autoroutine.jpg",
-      iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
+      iconLists: ["/icons/react.svg", "/icons/django.svg", "/icons/django-rest.svg", "/icons/tailwindcss.svg", "/icons/javascript.svg",],
       link: "https://automate-routine.vercel.app/",
     },
     {
@@ -84,7 +84,7 @@ export const navItems = [
       title: "The Quizzer - Sitcom Quiz App",
       des: "Simple yet elegent quiz app for sitcom fans. Built with React.js",
       img: "/thequizzer.jpg",
-      iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
+      iconLists: ["/icons/react.svg", "/icons/tailwindcss.svg", "/icons/javascript.svg",],
       link: "https://the-quizzer.vercel.app/",
     },
     {
@@ -92,7 +92,7 @@ export const navItems = [
       title: "An anonymous Q&A platform",
       des: "A platform for anonymous Q&A. Built with Flask.",
       img: "/annoytext.jpg",
-      iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
+      iconLists: ["/icons/flask.svg", "/icons/html-5.svg", "/icons/css-3.svg", "/icons/javascript.svg",],
       link: "https://github.com/MHThe1/anonymous-qna-platform",
     },
     {
@@ -100,7 +100,7 @@ export const navItems = [
       title: "Stuber - A safe ride sharing app for students",
       des: "A ride sharing app for students. Built completely on Django and MySQL. User's are verified through their school email.",
       img: "/stuber.jpg",
-      iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
+      iconLists: ["/icons/django.svg", "/icons/mysql.svg", "/icons/html-5.svg", "/icons/css-3.svg", "/icons/javascript.svg"],
       link: "https://github.com/MHThe1/Django-mysql-Student-Ride-Sharing-service",
     },
     {
@@ -108,7 +108,7 @@ export const navItems = [
       title: "FoodThanda - Resturant's food ordering app",
       des: "A nice and slick design for ordering food. Built with React.js and Node.js",
       img: "/foodthanda.jpg",
-      iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
+      iconLists: ["/icons/react.svg", "/icons/nodejs.svg", "/icons/tailwindcss.svg", "/icons/javascript.svg",],
       link: "https://github.com/MHThe1/food-ordering-react-app",
     },
   ];
