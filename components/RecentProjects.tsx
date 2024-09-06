@@ -1,70 +1,69 @@
 "use client";
-import { projects } from "@/data";
-import React from "react";
-import { PinContainer } from "./ui/3d-pin";
-import { FaLocationArrow } from "react-icons/fa6";
 
-const RecentProjects = () => {
+import React from "react";
+import { projects } from "@/data";
+import Link from "next/link";
+import BackgroundGrid from "./ui/BackgroundGrid";
+
+interface Project {
+  id: number;
+  title: string;
+  des: string;
+  img: string;
+  iconLists: string[];
+  link: string;
+}
+
+interface ProjectCardProps {
+  project: Project;
+}
+
+const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
-    <div className="py-20" id="projects">
-      <h1 className="heading mt-10">
-        A small selection of my{" "}
-        <span className="text-purple">recent projects</span>
-      </h1>
-      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-3 gap-x-8 gap-y-2 p-4">
-        {projects.map(({ id, title, des, img, iconLists, link }) => (
-          <div
-            key={id}
-            className="flex items-center justify-center mt-10 h-[25rem] lg:h-[30rem] xl:h-[30rem] 2xl:h-[35rem]"
-          >
-            <PinContainer href={link} title={title}>
-              <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh]">
-                <div
-                  className="relative w-full h-full overflow-hidden lg:rounded-3xl"
-                  style={{ backgroundColor: "#13162D" }}
-                >
-                  <img src="/bg.png" alt="bg-img" />
-                </div>
-                <img
-                  src={img}
-                  alt={title}
-                  className="z-10 abosolute bottom-0"
-                />
-              </div>
-              <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1 mt-4 mb-2">
-                {title}
-              </h1>
-              <p
-                className="lg:text-xl lg:font-normal 
-                font-light text-sm line-clamp-2"
-              >
-                {des}
-              </p>
-              <div className="flex items-center justify-between mt-7 mb-3">
-                <div className="flex items-center">
-                  {iconLists.map((icon, index) => (
-                    <div
-                      key={index}
-                      className="border border-white/[0.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8
-                      flex justify-center items-center"
-                      style={{
-                        transform: `translateX(-${5 * index * 2}px)`,
-                      }}
-                    >
-                      <img src={icon} alt={icon} className="p-2" />
-                    </div>
-                  ))}
-                  <div className="flex justify-center items-center">
-                    <p className="flex lg:text-xl md:text-xs text-sm text-purple">
-                      Check Live Site
-                    </p>
-                    <FaLocationArrow className="ms-3" color="#CBACF9" />
-                  </div>
-                </div>
-              </div>
-            </PinContainer>
-          </div>
-        ))}
+    <div className="relative group bg-gray-900 rounded-2xl p-6 h-full flex flex-col transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20">
+      <img
+        src={project.img}
+        alt={project.title}
+        className="w-full h-48 object-cover rounded-lg mb-4"
+      />
+      <h2 className="text-xl font-bold mb-2 text-white">{project.title}</h2>
+      <p className="text-gray-300 mb-4 flex-grow">{project.des}</p>
+      <div className="flex justify-between items-center mt-auto">
+        <div className="flex -space-x-2">
+          {project.iconLists.map((icon, index) => (
+            <img
+              key={index}
+              src={icon}
+              alt={`Technology ${index + 1}`}
+              className="w-8 h-8 rounded-full border-2 border-gray-800"
+            />
+          ))}
+        </div>
+        <Link
+          href={project.link}
+          className="text-purple-400 hover:text-purple-300 transition-colors"
+        >
+          View Project
+        </Link>
+      </div>
+    </div>
+  );
+};
+
+const RecentProjects: React.FC = () => {
+  return (
+    <div className="relative w-full overflow-hidden">
+      <BackgroundGrid />
+      <div className="relative py-20 container mx-auto px-4" id="projects">
+        <h1 className="text-4xl font-bold text-center mb-12">
+          A small selection of my{" "}
+          <span className="text-purple-500">recent projects</span>
+        </h1>
+        <div className="w-full mt-12 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8">
+          {projects.map((project: Project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
+        </div>
       </div>
     </div>
   );
