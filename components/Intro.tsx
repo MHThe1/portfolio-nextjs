@@ -99,7 +99,7 @@ export default function Grid() {
       <div className="relative w-full overflow-hidden">
         <div className="relative z-10 py-8">
           <h1 className="text-4xl font-bold text-center">
-            About <span className="text-purple-500">Me</span>
+            Intro to <span className="text-purple-400">MHThe1</span>
           </h1>
         </div>
 
@@ -108,22 +108,9 @@ export default function Grid() {
         <div className="relative z-10 py-12 container mx-auto px-4">
           <BentoGrid>
             <BentoGridItem className="md:col-span-2 md:row-span-2">
-              <h2 className="text-3xl font-semibold mb-4 text-purple-500">Intro</h2>
+              <h2 className="text-3xl font-semibold mb-4 text-purple-400">Skills</h2>
               <div className="space-y-4">
-                <p className="text-gray-300">
-                  Passionate developer with a love for creating innovative
-                  solutions. Always learning and exploring new technologies to push
-                  the boundaries of what's possible in web development.
-                </p>
-                <p className="text-gray-300">
-                  With a background in both frontend and backend technologies, I
-                  strive to create seamless, user-centric applications that make a
-                  difference.
-                </p>
                 <div className="mt-6">
-                  <h3 className="text-xl font-semibold mb-3 text-purple-500">
-                    Skills
-                  </h3>
                   <div className="grid grid-cols-2 gap-4">
                     {skills.map((skillSet, index) => (
                       <div key={index} className="bg-gray-800 p-4 rounded-lg">
@@ -145,28 +132,28 @@ export default function Grid() {
               </div>
             </BentoGridItem>
             <BentoGridItem>
-              <h2 className="text-3xl font-semibold mb-4 text-purple-500">Goals</h2>
+              <h2 className="text-3xl font-semibold mb-4 text-purple-400">Goals</h2>
               <ul className="list-none text-gray-300 space-y-2">
                 <li className="flex items-center">
-                  <span className="text-purple-500 mr-2">▹</span>
+                  <span className="text-purple-400 mr-2">▹</span>
                   Master full-stack development
                 </li>
                 <li className="flex items-center">
-                  <span className="text-purple-500 mr-2">▹</span>
+                  <span className="text-purple-400 mr-2">▹</span>
                   Contribute to open-source projects
                 </li>
                 <li className="flex items-center">
-                  <span className="text-purple-500 mr-2">▹</span>
+                  <span className="text-purple-400 mr-2">▹</span>
                   Build scalable, user-centric applications
                 </li>
                 <li className="flex items-center">
-                  <span className="text-purple-500 mr-2">▹</span>
+                  <span className="text-purple-400 mr-2">▹</span>
                   Explore AI and machine learning integration
                 </li>
               </ul>
             </BentoGridItem>
             <BentoGridItem>
-              <h2 className="text-3xl font-semibold mb-4 text-purple-500">
+              <h2 className="text-3xl font-semibold mb-4 text-purple-400">
                 Current Focus
               </h2>
               <p className="text-gray-300 mb-2">
