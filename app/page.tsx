@@ -1,4 +1,4 @@
-import Grid from "@/components/Grid";
+import Intro from "@/components/Intro";
 import RecentProjects from "@/components/RecentProjects";
 import DevelopmentPhilosophies from "@/components/DevelopmentPhilosophies";
 import Experience from "@/components/Experience";
@@ -14,7 +14,7 @@ export default function Home() {
     <main className="relative bg-black-100 flex flex-col overflow-clip">
         <NavBar navItems={navItems} />
         <Landing />
-        <Grid />
+        <Intro />
         <RecentProjects />
         <DevelopmentPhilosophies />
         <Experience />
