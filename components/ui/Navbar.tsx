@@ -56,14 +56,14 @@ export default function NavBar({ navItems }: NavBarProps) {
             <Link href="/" className="flex items-center space-x-2">
               <div
                 className={`w-8 h-8 flex items-center justify-center rounded-md transition-colors duration-300 ${
-                  activeSection === '' || activeSection === 'home' ? 'bg-purple text-white' : 'bg-gray-800 text-gray-50'
+                  activeSection === '' || activeSection === 'home' ? 'bg-purple-400 text-white' : 'bg-gray-800 text-gray-50'
                 }`}
               >
                 /
               </div>
               <span className="text-xl font-bold">
-                <span className={`text-white ${activeSection === 'home' ? 'text-purple' : ''}`}>mh</span>
-                <span className="text-purple">the1</span>
+                <span className={`text-white ${activeSection === 'home' ? 'text-purple-400' : ''}`}>mh</span>
+                <span className="text-purple-400">the1</span>
               </span>
             </Link>
           </div>
@@ -86,8 +86,8 @@ export default function NavBar({ navItems }: NavBarProps) {
                 href={item.link}
                 className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 ${
                   activeSection === item.link.slice(1)
-                    ? 'text-gray-900 bg-purple'
-                    : 'text-gray-100 hover:bg-purple hover:text-gray-900'
+                    ? 'text-gray-100 bg-purple-400'
+                    : 'text-gray-100 hover:bg-purple-400 hover:text-gray-100'
                 }`}
               >
                 {item.name}
@@ -119,8 +119,8 @@ export default function NavBar({ navItems }: NavBarProps) {
                 href={item.link}
                 className={`block px-4 py-2 text-lg font-medium w-full text-center transition-colors duration-300 ${
                   activeSection === item.link.slice(1)
-                    ? 'text-gray-900 bg-purple'
-                    : 'text-gray-100 hover:bg-purple hover:text-gray-900'
+                    ? 'text-gray-900 bg-purple-400'
+                    : 'text-gray-100 hover:bg-purple-400 hover:text-gray-900'
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >

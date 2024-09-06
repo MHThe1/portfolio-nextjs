@@ -3,7 +3,7 @@ import React from 'react';
 const BackgroundGrid: React.FC = () => {
   return (
     <div
-      className="absolute inset-0 bg-black"
+      className="absolute inset-0"
       style={{
         maskImage: 'linear-gradient(to bottom, black, transparent)',
         WebkitMaskImage: 'linear-gradient(to bottom, black, transparent)',
@@ -17,3 +17,4 @@ const BackgroundGrid: React.FC = () => {
 };
 
 export default BackgroundGrid;
+

@@ -52,20 +52,24 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 
 const RecentProjects: React.FC = () => {
   return (
-    <div className="relative w-full overflow-hidden">
-      <BackgroundGrid />
-      <div className="relative py-20 container mx-auto px-4" id="projects">
-        <h1 className="text-4xl font-bold text-center mb-12">
-          A small selection of my{" "}
-          <span className="text-purple-500">recent projects</span>
-        </h1>
-        <div className="w-full mt-12 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8">
+    <section id="projects" className="pt-16 md:pt-20 bg-transparent">
+      <div className="relative w-full overflow-hidden">
+        <div className="relative z-10 py-8">
+          <h1 className="text-4xl font-bold text-center">
+            Recent <span className="text-purple-400">Projects</span>
+          </h1>
+        </div>
+
+        <BackgroundGrid />
+        <div className="relative z-10 py-12 container mx-auto px-4">
+        <div className="w-full grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8">
           {projects.map((project: Project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
         </div>
       </div>
     </div>
+    </section>
   );
 };
 

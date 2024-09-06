@@ -3,6 +3,7 @@
 import React from "react";
 import { cn } from "@/utils/cn";
 import { motion } from "framer-motion";
+import BackgroundGrid from "./ui/BackgroundGrid";
 
 const BentoGrid = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -63,19 +64,6 @@ const SkillIcon = ({ name }: { name: string }) => {
   );
 };
 
-const BackgroundGrid = () => {
-  return (
-    <div className="absolute inset-0 z-0">
-      <div
-        className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"
-        style={{
-          maskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)',
-          WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)',
-        }}
-      ></div>
-    </div>
-  );
-};
 
 export default function Grid() {
   const skills = [
@@ -111,13 +99,13 @@ export default function Grid() {
               <h2 className="text-3xl font-semibold mb-4 text-purple-400">Skills</h2>
               <div className="space-y-4">
                 <div className="mt-6">
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                     {skills.map((skillSet, index) => (
                       <div key={index} className="bg-gray-800 p-4 rounded-lg">
                         <h4 className="font-medium text-purple-300 mb-2">
                           {skillSet.category}
                         </h4>
-                        <ul className="text-sm text-gray-300 space-y-1 grid grid-cols-1 lg:grid-cols-2 gap-2">
+                        <ul className="text-sm text-gray-300 space-y-1 grid grid-cols-2 gap-2">
                           {skillSet.items.map((skill, skillIndex) => (
                             <li key={skillIndex} className="flex items-center">
                               <SkillIcon name={skill} />
