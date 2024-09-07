@@ -10,6 +10,7 @@
     "export": "next export"
   },
   "dependencies": {
+    "@datadog/browser-rum": "^4.25.1",
     "@react-three/drei": "^9.112.0",
     "@react-three/fiber": "^8.17.6",
     "@tabler/icons-react": "^3.14.0",
