@@ -1,11 +1,11 @@
-'use client'
+"use client";
 
-import React from "react"
-import { motion } from "framer-motion"
-import Image from "next/image"
-import TypewriterEffect from "./TypewriterEffect"
-import { Button } from "@/components/ui/button"
-import BackgroundGrid from "./ui/BackgroundGrid"
+import React from "react";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import TypewriterEffect from "./TypewriterEffect";
+import { Button } from "@/components/ui/button";
+import BackgroundGrid from "./ui/BackgroundGrid";
 
 export default function Landing() {
   const fadeInUp = {
@@ -15,7 +15,7 @@ export default function Landing() {
       y: 0,
       transition: { duration: 0.8, ease: "easeOut" },
     },
-  }
+  };
 
   return (
     <section id="home" className="bg-white dark:bg-black-100">
@@ -68,11 +68,11 @@ export default function Landing() {
                 technologies, I strive to create seamless, user-centric
                 applications that make a difference.
               </p>
-              <div className="mt-8 flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
-              <Button
+              <div className="mt-8 flex flex-row justify-center md:justify-start gap-4">
+                <Button
                   variant="outline"
                   size="lg"
-                  className="group relative overflow-hidden transition-all duration-300 ease-out bg-purple-400 text-black-100 dark:text-white hover:bg-black hover:dark:bg-white hover:text-primary-foreground"
+                  className="group relative overflow-hidden transition-all duration-300 ease-out bg-purple-400 text-black-100 dark:text-white hover:bg-black hover:dark:bg-red-600 hover:text-primary"
                   style={{ borderRadius: "0.60rem" }}
                   onClick={() =>
                     (window.location.href = "mailto:mehedihtanvir@gmail.com")
@@ -81,10 +81,11 @@ export default function Landing() {
                   <span className="relative z-10">Email Me</span>
                   <span className="absolute inset-0 bg-primary transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"></span>
                 </Button>
+
                 <Button
                   variant="outline"
                   size="lg"
-                  className="group relative overflow-hidden transition-all duration-300 ease-out bg-purple-400 text-black-100 dark:text-white hover:bg-black hover:dark:bg-white hover:text-primary-foreground"
+                  className="group relative overflow-hidden transition-all duration-300 ease-out bg-purple-400 text-black-100 dark:text-white hover:bg-black hover:dark:bg-red-600 hover:text-primary"
                   style={{ borderRadius: "0.60rem" }}
                   onClick={() =>
                     window.open("https://github.com/MHThe1", "_blank")
@@ -99,5 +100,5 @@ export default function Landing() {
         </div>
       </div>
     </section>
-  )
+  );
 }
