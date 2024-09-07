@@ -1,30 +1,30 @@
-"use client";
+'use client'
 
-import React from "react";
-import { cn } from "@/utils/cn";
-import { motion } from "framer-motion";
-import BackgroundGrid from "./ui/BackgroundGrid";
-import Image from "next/image";
+import React from "react"
+import { cn } from "@/utils/cn"
+import { motion } from "framer-motion"
+import BackgroundGrid from "./ui/BackgroundGrid"
+import Image from "next/image"
 
 const BentoGrid = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-7xl mx-auto p-4">
       {children}
     </div>
-  );
-};
+  )
+}
 
 const BentoGridItem = ({
   className,
   children,
 }: {
-  className?: string;
-  children: React.ReactNode;
+  className?: string
+  children: React.ReactNode
 }) => {
   return (
     <motion.div
       className={cn(
-        "rounded-xl border border-white/[0.1] p-6 bg-gradient-to-br from-gray-900 to-gray-800 overflow-hidden",
+        "rounded-xl border border-white/[0.1] p-6 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-800 overflow-hidden",
         className
       )}
       whileHover={{ scale: 1.02 }}
@@ -32,8 +32,8 @@ const BentoGridItem = ({
     >
       {children}
     </motion.div>
-  );
-};
+  )
+}
 
 const SkillIcon = ({ name }: { name: string }) => {
   const iconMap: { [key: string]: string } = {
@@ -54,7 +54,7 @@ const SkillIcon = ({ name }: { name: string }) => {
     CSS3: "/icons/css-3.svg",
     MySQL: "/icons/mysql.svg",
     PostgreSQL: "/icons/postgresql.svg",
-  };
+  }
 
   return (
     <Image
@@ -64,11 +64,10 @@ const SkillIcon = ({ name }: { name: string }) => {
       height={32}
       className="mr-2 inline-block"
     />
-  );
-};
+  )
+}
 
-
-export default function Grid() {
+export default function Intro() {
   const skills = [
     {
       category: "Languages",
@@ -83,18 +82,18 @@ export default function Grid() {
       items: ["React", "NextJs", "TailwindCSS", "HTML5", "CSS3"],
     },
     { category: "Database", items: ["MySQL", "PostgreSQL"] },
-  ];
+  ]
 
   return (
-    <section id="about" className="pt-16 md:pt-20">
+    <section id="about" className="bg-white dark:bg-black-100">
       <div className="relative w-full overflow-hidden">
-        <div className="relative z-10 py-8">
-          <h1 className="text-4xl font-bold text-center">
+        <div className="relative z-10 pt-20">
+          <h1 className="text-4xl font-bold text-center text-black dark:text-white">
             Intro to <span className="text-purple-400">MHThe1</span>
           </h1>
         </div>
 
-        <BackgroundGrid />
+        <BackgroundGrid reverse={true} />
 
         <div className="relative z-10 py-12 container mx-auto px-4">
           <BentoGrid>
@@ -104,11 +103,12 @@ export default function Grid() {
                 <div className="mt-6">
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                     {skills.map((skillSet, index) => (
-                      <div key={index} className="bg-gray-800 p-4 rounded-lg">
-                        <h4 className="font-medium text-purple-300 mb-2">
+                      <div key={index} className="bg-gray-200 dark:bg-gray-800 p-4"
+                      style={{ borderRadius: "0.60rem" }}>
+                        <h4 className="font-medium text-purple-600 dark:text-purple-300 mb-2">
                           {skillSet.category}
                         </h4>
-                        <ul className="text-sm text-gray-300 space-y-1 grid grid-cols-2 gap-2">
+                        <ul className="text-sm text-gray-700 dark:text-gray-300 space-y-1 grid grid-cols-2 gap-2">
                           {skillSet.items.map((skill, skillIndex) => (
                             <li key={skillIndex} className="flex items-center">
                               <SkillIcon name={skill} />
@@ -124,7 +124,7 @@ export default function Grid() {
             </BentoGridItem>
             <BentoGridItem>
               <h2 className="text-3xl font-semibold mb-4 text-purple-400">Goals</h2>
-              <ul className="list-none text-gray-300 space-y-2">
+              <ul className="list-none text-gray-700 dark:text-gray-300 space-y-2">
                 <li className="flex items-center">
                   <span className="text-purple-400 mr-2">▹</span>
                   Master full-stack development
@@ -147,12 +147,12 @@ export default function Grid() {
               <h2 className="text-3xl font-semibold mb-4 text-purple-400">
                 Current Focus
               </h2>
-              <p className="text-gray-300 mb-2">
+              <p className="text-gray-700 dark:text-gray-300 mb-2">
                 Diving deep into serverless architectures and exploring the
                 potential of edge computing to create faster, more efficient web
                 applications.
               </p>
-              <p className="text-gray-300">
+              <p className="text-gray-700 dark:text-gray-300">
                 Experimenting with new UI/UX paradigms to enhance user engagement
                 and accessibility across all devices.
               </p>

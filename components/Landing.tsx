@@ -1,11 +1,11 @@
-"use client";
+'use client'
 
-import React from "react";
-import { motion } from "framer-motion";
-import Image from "next/image";
-import TypewriterEffect from "./TypewriterEffect";
-import { Button } from "@/components/ui/button";
-import BackgroundGrid from "./ui/BackgroundGrid";
+import React from "react"
+import { motion } from "framer-motion"
+import Image from "next/image"
+import TypewriterEffect from "./TypewriterEffect"
+import { Button } from "@/components/ui/button"
+import BackgroundGrid from "./ui/BackgroundGrid"
 
 export default function Landing() {
   const fadeInUp = {
@@ -15,10 +15,10 @@ export default function Landing() {
       y: 0,
       transition: { duration: 0.8, ease: "easeOut" },
     },
-  };
+  }
 
   return (
-    <section id="home">
+    <section id="home" className="bg-white dark:bg-black-100">
       <div className="relative w-full overflow-hidden">
         <BackgroundGrid />
         <div className="relative z-10 py-12 container mx-auto px-4 md:pt-32">
@@ -45,7 +45,7 @@ export default function Landing() {
               animate="visible"
               variants={fadeInUp}
             >
-              <h1 className="text-lg md:text-2xl font-bold mb-2 md:mb-4">
+              <h1 className="text-lg md:text-2xl font-bold mb-2 md:mb-4 text-black dark:text-white">
                 Hi There!{" "}
                 <span
                   role="img"
@@ -55,24 +55,25 @@ export default function Landing() {
                   👋🏻
                 </span>
               </h1>
-              <h1 className="text-2xl sm:text-5xl font-bold md:mb-1">
+              <h1 className="text-2xl sm:text-5xl font-bold md:mb-1 text-black dark:text-white">
                 I&apos;m{" "}
                 <strong className="text-purple-400">Mehedi Hasan Tanvir</strong>
               </h1>
               <div className="flex justify-center md:justify-start">
                 <TypewriterEffect />
               </div>
-              <p className="text-gray-300">
+              <p className="text-gray-700 dark:text-gray-300">
                 Passionate developer with a love for creating innovative
                 solutions with a background in both frontend and backend
                 technologies, I strive to create seamless, user-centric
                 applications that make a difference.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
-                <Button
+              <Button
                   variant="outline"
                   size="lg"
-                  className="group relative overflow-hidden transition-all duration-300 ease-out bg-purple-400 text-black-100 hover:bg-primary hover:text-primary-foreground"
+                  className="group relative overflow-hidden transition-all duration-300 ease-out bg-purple-400 text-black-100 dark:text-white hover:bg-black hover:dark:bg-white hover:text-primary-foreground"
+                  style={{ borderRadius: "0.60rem" }}
                   onClick={() =>
                     (window.location.href = "mailto:mehedihtanvir@gmail.com")
                   }
@@ -83,7 +84,8 @@ export default function Landing() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="group relative overflow-hidden transition-all duration-300 ease-out bg-purple-400 text-black-100 hover:bg-primary hover:text-primary-foreground"
+                  className="group relative overflow-hidden transition-all duration-300 ease-out bg-purple-400 text-black-100 dark:text-white hover:bg-black hover:dark:bg-white hover:text-primary-foreground"
+                  style={{ borderRadius: "0.60rem" }}
                   onClick={() =>
                     window.open("https://github.com/MHThe1", "_blank")
                   }
@@ -97,5 +99,5 @@ export default function Landing() {
         </div>
       </div>
     </section>
-  );
+  )
 }

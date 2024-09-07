@@ -1,24 +1,24 @@
-'use client'
+"use client";
 
-import { motion, AnimatePresence } from "framer-motion"
-import Link from "next/link"
-import { HiX } from "react-icons/hi"
-import { MdDarkMode, MdLightMode } from "react-icons/md"
-import { FaKeyboard } from "react-icons/fa"
+import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
+import { HiX } from "react-icons/hi";
+import { MdDarkMode, MdLightMode } from "react-icons/md";
+import { FaKeyboard } from "react-icons/fa";
 import KeyboardShortcuts from "./KeyboardShortcuts";
 
 interface NavItem {
-  name: string
-  link: string
+  name: string;
+  link: string;
 }
 
 interface ActionCenterProps {
-  isOpen: boolean
-  onClose: () => void
-  isDarkMode: boolean
-  toggleDarkMode: () => void
-  navItems: NavItem[]
-  activeSection: string
+  isOpen: boolean;
+  onClose: () => void;
+  isDarkMode: boolean;
+  toggleDarkMode: () => void;
+  navItems: NavItem[];
+  activeSection: string;
 }
 
 export default function ActionCenter({
@@ -37,9 +37,7 @@ export default function ActionCenter({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className={`fixed inset-0 z-50 w-full h-full bg-opacity-[0.98] flex md:block ${
-            isDarkMode ? "bg-gray-800 text-white" : "bg-white text-gray-800"
-          }`}
+          className="fixed inset-0 z-50 w-full h-full bg-white dark:bg-gray-800 text-gray-800 dark:text-white bg-opacity-[0.98] flex md:block"
         >
           <motion.div
             initial={{ y: "-100%" }}
@@ -50,7 +48,8 @@ export default function ActionCenter({
           >
             <button
               onClick={onClose}
-              className="absolute top-8 right-4 w-10 h-10 rounded-xl flex items-center justify-center bg-gray-500 bg-opacity-25 text-gray-200 hover:text-gray-700"
+              className="absolute top-8 right-4 w-10 h-10 flex items-center justify-center bg-gray-500 bg-opacity-25 text-gray-200 hover:text-gray-700"
+              style={{ borderRadius: "0.60rem" }}
             >
               <HiX size={24} />
             </button>
@@ -60,11 +59,12 @@ export default function ActionCenter({
                 <h2 className="text-2xl font-bold mb-4">Action Center</h2>
                 <motion.button
                   onClick={toggleDarkMode}
-                  className={`w-32 h-20 rounded-lg ${
+                  className={`w-32 h-20 ${
                     isDarkMode ? "bg-gray-700" : "bg-purple-100"
                   } transition-colors duration-300 overflow-hidden flex flex-col p-2`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  style={{ borderRadius: "0.60rem" }}
                 >
                   <motion.div
                     initial={false}
@@ -92,7 +92,7 @@ export default function ActionCenter({
                     <li key={item.name}>
                       <Link
                         href={item.link}
-                        className={`block px-3 py-2 rounded-md text-sm font-medium border border-dotted border-gray-300 border-opacity-10 transition-colors duration-300 ${
+                        className={`text-center md:text-left block px-3 py-2 text-sm font-medium border border-dotted border-gray-300 border-opacity-10 transition-colors duration-300 ${
                           activeSection === item.link.slice(1)
                             ? "bg-purple-500 text-white"
                             : `${
@@ -101,6 +101,7 @@ export default function ActionCenter({
                                   : "text-gray-700 hover:bg-purple-200"
                               }`
                         }`}
+                        style={{ borderRadius: "0.60rem" }}
                         onClick={onClose}
                       >
                         {item.name}
@@ -115,5 +116,5 @@ export default function ActionCenter({
         </motion.div>
       )}
     </AnimatePresence>
-  )
+  );
 }
