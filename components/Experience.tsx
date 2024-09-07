@@ -34,13 +34,15 @@ const Experience = () => {
               >
                 <div className="flex lg:flex-row flex-col lg:items-center p-3 py-6 md:p-5 lg:p-10 gap-2">
                   <div className="relative w-16 md:w-20 lg:w-32">
-                    <Image
-                      src={card.thumbnail}
-                      alt={card.thumbnail}
-                      layout="fill" 
-                      objectFit="cover" 
-                      className="rounded-lg"
-                    />
+                    <div className="relative w-full h-full">
+                      <Image
+                        src={card.thumbnail}
+                        alt={card.thumbnail}
+                        fill
+                        style={{ objectFit: "cover" }}
+                        className="rounded-lg"
+                      />
+                    </div>
                   </div>
                   <div className="lg:ms-5">
                     <h1 className="text-start text-xl md:text-2xl font-bold">

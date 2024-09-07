@@ -32,9 +32,10 @@ export default function Landing() {
               <Image
                 src="/myDp.png"
                 alt="Mehedi Hasan Tanvir"
-                className="max-h-[250px] md:max-h-[450px] object-contain"
                 width={500}
                 height={500}
+                style={{ objectFit: "contain" }}
+                className="max-h-[250px] md:max-h-[450px]"
               />
             </motion.div>
 
@@ -55,7 +56,8 @@ export default function Landing() {
                 </span>
               </h1>
               <h1 className="text-2xl sm:text-5xl font-bold md:mb-1">
-                I&apos;m <strong className="text-purple-400">Mehedi Hasan Tanvir</strong>
+                I&apos;m{" "}
+                <strong className="text-purple-400">Mehedi Hasan Tanvir</strong>
               </h1>
               <div className="flex justify-center md:justify-start">
                 <TypewriterEffect />

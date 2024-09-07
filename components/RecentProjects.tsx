@@ -31,9 +31,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           <Image
             src={project.img}
             alt={project.title}
-            layout="fill"
-            objectFit="cover"
-            className="rounded-lg"
+            fill
+            className="rounded-lg object-cover"
           />
         </div>
         <h2 className="text-xl font-bold mb-2 text-white">{project.title}</h2>
