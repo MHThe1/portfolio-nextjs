@@ -6,6 +6,7 @@ import Image from "next/image";
 import TypewriterEffect from "./TypewriterEffect";
 import { Button } from "@/components/ui/button";
 import BackgroundGrid from "./ui/BackgroundGrid";
+import LandingButtons from "./ui/landing-buttons";
 
 export default function Landing() {
   const fadeInUp = {
@@ -69,31 +70,7 @@ export default function Landing() {
                 applications that make a difference.
               </p>
               <div className="mt-8 flex flex-row justify-center md:justify-start gap-4">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="group relative overflow-hidden transition-all duration-300 ease-out bg-purple-400 text-black-100 dark:text-white hover:bg-black hover:dark:bg-red-600 hover:text-primary"
-                  style={{ borderRadius: "0.60rem" }}
-                  onClick={() =>
-                    (window.location.href = "mailto:mehedihtanvir@gmail.com")
-                  }
-                >
-                  <span className="relative z-10">Email Me</span>
-                  <span className="absolute inset-0 bg-primary transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"></span>
-                </Button>
-
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="group relative overflow-hidden transition-all duration-300 ease-out bg-purple-400 text-black-100 dark:text-white hover:bg-black hover:dark:bg-red-600 hover:text-primary"
-                  style={{ borderRadius: "0.60rem" }}
-                  onClick={() =>
-                    window.open("https://github.com/MHThe1", "_blank")
-                  }
-                >
-                  <span className="relative z-10">GitHub</span>
-                  <span className="absolute inset-0 bg-primary transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"></span>
-                </Button>
+                <LandingButtons />
               </div>
             </motion.div>
           </div>

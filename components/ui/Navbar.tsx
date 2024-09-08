@@ -110,23 +110,25 @@ export default function NavBar({ navItems }: NavBarProps) {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 text-gray-800 dark:text-white bg-white dark:bg-gray-900 bg-opacity-30 backdrop-blur-md shadow-lg transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 text-gray-800 dark:text-white bg-white dark:bg-gray-800 bg-opacity-30 backdrop-blur-md shadow-lg transition-all duration-300 ${
           activeSection && activeSection !== "home"
-            ? "border-b border-gray-300 border-opacity-50"
-            : ""
+            ? "border-b border-gray-300 border-opacity-20"
+            : "border-b border-transparent"
         }`}
+        style={{
+          transition: "border-color 0.3s ease, border-opacity 0.3s ease",
+        }}
       >
-        <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center space-x-4">
               <Link href="/" className="flex items-center space-x-2">
                 <div
-                  className={`w-8 h-8 flex items-center justify-center transition-colors duration-300 ${
+                  className={`w-8 h-8 flex items-center justify-center rounded-lg transition-colors duration-300 ${
                     activeSection === "" || activeSection === "home"
                       ? "bg-purple-500 rounded-md text-white"
-                      : "dark:bg-gray-800 bg-gray-300 rounded-md dark:text-gray-50 text-black"
+                      : "dark:bg-gray-800 bg-gray-300 dark:text-gray-50 text-black"
                   }`}
-                  style={{ border: "", borderRadius: "0.375rem" }}
                 >
                   /
                 </div>
@@ -150,7 +152,7 @@ export default function NavBar({ navItems }: NavBarProps) {
                 href="https://github.com/mhthe1"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-800 dark:text-gray-200 hover:text-gray-300 hover:dark:text-gray-50"
+                className="text-gray-800 dark:text-gray-200 hover:text-gray-300 hover:dark:text-gray-50 hover:scale-125 transition-transform duration-300"
               >
                 <FaGithub size={24} />
               </a>
@@ -158,13 +160,13 @@ export default function NavBar({ navItems }: NavBarProps) {
                 href="https://www.linkedin.com/in/mehedi-hasan-tanvir-5507b0228/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-800 dark:text-gray-200 hover:text-gray-300 hover:dark:text-gray-50"
+                className="text-gray-800 dark:text-gray-200 hover:text-gray-300 hover:dark:text-gray-50 hover:scale-125 transition-transform duration-300"
               >
                 <FaLinkedin size={24} />
               </a>
               <button
                 onClick={toggleActionCenter}
-                className="px-4 py-2 rounded-full bg-gray-950 dark:bg-gray-700 bg-opacity-10 dark:text-white text-black font-medium hover:bg-purple-600 transition-colors duration-300 flex items-center space-x-2"
+                className="px-4 py-2 rounded-full hover:scale-105 transition-transform duration-300 bg-gray-950 dark:bg-gray-700 bg-opacity-10 dark:text-white text-black font-medium hover:bg-purple-600 flex items-center space-x-2"
               >
                 <TbLayoutDashboardFilled size={24} />
                 <span className="hidden md:inline">Quick Access</span>{" "}

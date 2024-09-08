@@ -76,15 +76,25 @@ export const navItems = [
       title: "Automate-Routine for BRACU Students",
       des: "Pre Registration is a mess, and I wanted to make it easier to get the perfect combination of course and sections for each student. So I built this app with React.js in the frontend and Django REST API in the backend.",
       img: "/autoroutine.jpg",
-      iconLists: ["/icons/react.svg", "/icons/django.svg", "/icons/django-rest.svg", "/icons/tailwindcss.svg", "/icons/javascript.svg",],
+      iconLists: [
+        { icon: "/icons/react.svg", name: "React" },
+        { icon: "/icons/django.svg", name: "Django" },
+        { icon: "/icons/django-rest.svg", name: "Django REST" },
+        { icon: "/icons/tailwindcss.svg", name: "Tailwind CSS" },
+        { icon: "/icons/javascript.svg", name: "JavaScript" },
+      ],
       link: "https://automate-routine.vercel.app/",
     },
     {
       id: 2,
       title: "The Quizzer - Sitcom Quiz App",
-      des: "Simple yet elegent quiz app for sitcom fans. Built with React.js",
+      des: "Simple yet elegant quiz app for sitcom fans. Built with React.js",
       img: "/thequizzer.jpg",
-      iconLists: ["/icons/react.svg", "/icons/tailwindcss.svg", "/icons/javascript.svg",],
+      iconLists: [
+        { icon: "/icons/react.svg", name: "React" },
+        { icon: "/icons/tailwindcss.svg", name: "Tailwind CSS" },
+        { icon: "/icons/javascript.svg", name: "JavaScript" },
+      ],
       link: "https://the-quizzer.vercel.app/",
     },
     {
@@ -92,26 +102,43 @@ export const navItems = [
       title: "An anonymous Q&A platform",
       des: "A platform for anonymous Q&A. Built with Flask.",
       img: "/annoytext.jpg",
-      iconLists: ["/icons/flask.svg", "/icons/html-5.svg", "/icons/css-3.svg", "/icons/javascript.svg",],
+      iconLists: [
+        { icon: "/icons/flask.svg", name: "Flask" },
+        { icon: "/icons/html-5.svg", name: "HTML5" },
+        { icon: "/icons/css-3.svg", name: "CSS3" },
+        { icon: "/icons/javascript.svg", name: "JavaScript" },
+      ],
       link: "https://github.com/MHThe1/anonymous-qna-platform",
     },
     {
       id: 4,
       title: "Stuber - A safe ride sharing app for students",
-      des: "A ride sharing app for students. Built completely on Django and MySQL. User's are verified through their school email.",
+      des: "A ride sharing app for students. Built completely on Django and MySQL. Users are verified through their school email.",
       img: "/stuber.jpg",
-      iconLists: ["/icons/django.svg", "/icons/mysql.svg", "/icons/html-5.svg", "/icons/css-3.svg", "/icons/javascript.svg"],
+      iconLists: [
+        { icon: "/icons/django.svg", name: "Django" },
+        { icon: "/icons/mysql.svg", name: "MySQL" },
+        { icon: "/icons/html-5.svg", name: "HTML5" },
+        { icon: "/icons/css-3.svg", name: "CSS3" },
+        { icon: "/icons/javascript.svg", name: "JavaScript" },
+      ],
       link: "https://github.com/MHThe1/Django-mysql-Student-Ride-Sharing-service",
     },
     {
       id: 5,
-      title: "FoodThanda - Resturant's food ordering app",
+      title: "FoodThanda - Restaurant's food ordering app",
       des: "A nice and slick design for ordering food. Built with React.js and Node.js",
       img: "/foodthanda.jpg",
-      iconLists: ["/icons/react.svg", "/icons/nodejs.svg", "/icons/tailwindcss.svg", "/icons/javascript.svg",],
+      iconLists: [
+        { icon: "/icons/react.svg", name: "React" },
+        { icon: "/icons/nodejs.svg", name: "Node.js" },
+        { icon: "/icons/tailwindcss.svg", name: "Tailwind CSS" },
+        { icon: "/icons/javascript.svg", name: "JavaScript" },
+      ],
       link: "https://github.com/MHThe1/food-ordering-react-app",
     },
   ];
+  
   
   export const philosophies = [
     {

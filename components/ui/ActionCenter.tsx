@@ -48,7 +48,7 @@ export default function ActionCenter({
           >
             <button
               onClick={onClose}
-              className="absolute top-8 right-4 w-10 h-10 flex items-center justify-center bg-gray-500 bg-opacity-25 text-gray-200 hover:text-gray-700"
+              className="absolute top-8 right-4 w-10 h-10 flex items-center justify-center dark:bg-gray-500/25 bg-purple-100 text-black-200/70 dark:text-gray-200 hover:text-gray-700"
               style={{ borderRadius: "0.60rem" }}
             >
               <HiX size={24} />
@@ -92,7 +92,7 @@ export default function ActionCenter({
                     <li key={item.name}>
                       <Link
                         href={item.link}
-                        className={`text-center md:text-left block px-3 py-2 text-sm font-medium border border-dotted border-gray-300 border-opacity-10 transition-colors duration-300 ${
+                        className={`text-center md:text-left block px-3 py-2 text-sm font-medium border border-dotted border-gray-600/40 dark:border-gray-300/10 transition-colors duration-300 ${
                           activeSection === item.link.slice(1)
                             ? "bg-purple-500 text-white"
                             : `${
