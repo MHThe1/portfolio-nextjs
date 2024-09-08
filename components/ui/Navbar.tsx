@@ -169,7 +169,7 @@ export default function NavBar({ navItems }: NavBarProps) {
                 className="px-4 py-2 rounded-full hover:scale-105 transition-transform duration-300 bg-gray-950 dark:bg-gray-700 bg-opacity-10 dark:text-white text-black font-medium hover:bg-purple-600 flex items-center space-x-2"
               >
                 <TbLayoutDashboardFilled size={24} />
-                <span className="hidden md:inline">Quick Access</span>{" "}
+                <span className="hidden lg:inline">Quick Access</span>{" "}
               </button>
             </div>
           </div>

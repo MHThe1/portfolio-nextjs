@@ -1,10 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { projects } from "@/data";
 import Link from "next/link";
 import BackgroundGrid from "./ui/BackgroundGrid";
-import { FaLocationArrow } from "react-icons/fa6";
 import Image from "next/image";
 
 interface Project {
@@ -23,11 +22,37 @@ interface ProjectCardProps {
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const isGithubLink = project.link.includes("github.com");
   const [activeIcon, setActiveIcon] = useState<number | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
 
-  const handleIconInteraction = (index: number) => {
-    if (activeIcon === index) {
-      setActiveIcon(null);
-    } else {
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 1024); // Assuming 1024px as the breakpoint for mobile
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  useEffect(() => {
+    if (isMobile && activeIcon !== null) {
+      const handleOutsideClick = (e: MouseEvent) => {
+        if (!(e.target as Element).closest(".icon-container")) {
+          setActiveIcon(null);
+        }
+      };
+
+      document.addEventListener("click", handleOutsideClick);
+
+      return () => document.removeEventListener("click", handleOutsideClick);
+    }
+  }, [isMobile, activeIcon]);
+
+  const handleIconInteraction = (index: number, e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (isMobile) {
       setActiveIcon(index);
     }
   };
@@ -35,12 +60,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
     <Link href={project.link} className="block">
       <div className="relative group bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-800 rounded-2xl p-6 h-full flex flex-col transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20 hover:scale-105">
-        <div className="relative w-full h-48 rounded-lg mb-4 overflow-hidden">
+        <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
           <Image
             src={project.img}
             alt={project.title}
             fill
-            className="rounded-lg object-cover"
+            className="absolute inset-0 rounded-lg object-cover"
           />
         </div>
         <h2 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">
@@ -50,16 +75,19 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           {project.des}
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center md:items-start justify-between mt-7 mb-3 gap-4">
-          <div className="flex items-center flex-wrap" onClick={(e) => e.preventDefault()}>
+        <div className="flex flex-col 2xl:flex-row items-center 2xl:items-start justify-between mt-7 mb-3 gap-4">
+          <div
+            className="flex items-center flex-wrap"
+            onClick={(e) => e.preventDefault()}
+          >
             {project.iconLists.map((icon, index) => (
               <div
                 key={index}
-                onClick={() => handleIconInteraction(index)}
-                onMouseEnter={() => setActiveIcon(index)}
-                onMouseLeave={() => setActiveIcon(null)}
-                className={`border border-gray-300 dark:border-white/[0.2] rounded-full bg-gray-200 dark:bg-gray-400/20 w-14 h-14 lg:w-10 lg:h-10 flex justify-center items-center relative transition-all duration-300 hover:z-10 hover:scale-110 cursor-pointer mb-2 lg:mb-0`}
-                style={{ marginLeft: index === 0 ? '0' : '-10px' }}
+                onClick={(e) => handleIconInteraction(index, e)}
+                onMouseEnter={() => !isMobile && setActiveIcon(index)}
+                onMouseLeave={() => !isMobile && setActiveIcon(null)}
+                className="icon-container border border-gray-300 dark:border-white/[0.2] rounded-full bg-gray-200 dark:bg-gray-400/20 w-14 h-14 lg:w-10 lg:h-10 flex justify-center items-center relative transition-all duration-300 hover:z-10 hover:scale-110 cursor-pointer mb-2 lg:mb-0"
+                style={{ marginLeft: index === 0 ? "0" : "-10px" }}
               >
                 <Image
                   src={icon.icon}
@@ -81,7 +109,18 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             <p className="text-sm lg:text-base text-purple-600 dark:text-purple-400">
               {isGithubLink ? "View GitHub Repo" : "Visit Live Site"}
             </p>
-            <FaLocationArrow className="ml-2" color="#CBACF9" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-4 w-4 ml-2"
+              viewBox="0 0 20 20"
+              fill="#CBACF9"
+            >
+              <path
+                fillRule="evenodd"
+                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                clipRule="evenodd"
+              />
+            </svg>
           </div>
         </div>
       </div>

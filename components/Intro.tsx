@@ -8,7 +8,7 @@ import Image from "next/image";
 
 const BentoGrid = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-7xl mx-auto p-4">
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-7xl mx-auto p-4">
       {children}
     </div>
   );
@@ -116,7 +116,7 @@ export default function Intro() {
 
         <div className="relative z-10 py-12 container mx-auto px-4">
           <BentoGrid>
-            <BentoGridItem className="md:col-span-2 md:row-span-2">
+            <BentoGridItem className="lg:col-span-2 lg:row-span-2">
               <h2 className="text-3xl font-semibold mb-4 text-purple-400">
                 Skills
               </h2>
