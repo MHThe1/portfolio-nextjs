@@ -5,7 +5,6 @@ import { cn } from "@/utils/cn";
 import { motion } from "framer-motion";
 import BackgroundGrid from "./ui/BackgroundGrid";
 import Image from "next/image";
-import { Material } from "three/src/Three.js";
 
 const BentoGrid = ({ children }: { children: React.ReactNode }) => {
   return (
