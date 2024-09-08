@@ -150,7 +150,7 @@ export default function Intro() {
                         Databases
                       </h4>
                       <h4 className="font-medium text-purple-600 dark:text-purple-300 mb-2 hidden md:block">
-                        Databases & Tools
+                        Databases
                       </h4>
                       <ul className="text-sm text-gray-700 dark:text-gray-300 space-y-1 grid grid-cols-2 gap-2">
                         {skills[3].items.map((skill, skillIndex) => (
@@ -160,10 +160,10 @@ export default function Intro() {
                           </li>
                         ))}
                       </ul>
-                      {/* <h4 className="font-medium text-purple-600 dark:text-purple-300 my-2 hidden md:block">
+                      <h4 className="font-medium text-purple-600 dark:text-purple-300 my-2 hidden md:block">
                         Tools & Others
-                      </h4> */}
-                      <hr className="my-3 border-t-2 border-gray-300 dark:border-gray-700 border-dotted shadow-sm w-3/4 mx-auto hidden md:flex" />
+                      </h4>
+                      {/* <hr className="my-3 border-t-2 border-gray-300 dark:border-gray-700 border-dotted shadow-sm w-3/4 mx-auto hidden md:flex" /> */}
 
                       <ul className="text-sm text-gray-700 dark:text-gray-300 space-y-1 grid grid-cols-2 gap-2">
                         {skills[4].items.map((skill, skillIndex) => (
