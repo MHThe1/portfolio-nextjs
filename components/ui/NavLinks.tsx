@@ -17,7 +17,7 @@ export default function NavLinks({ navItems, activeSection }: NavLinksProps) {
         <Link
           key={item.name}
           href={item.link}
-          className={`px-3 py-2 rounded-xl text-sm font-medium transition-colors duration-300 ${
+          className={`px-2 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${
             activeSection === item.link.slice(1)
               ? "text-gray-100 bg-purple-600"
               :  "hover:bg-purple-600 hover:text-gray-100"

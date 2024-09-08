@@ -110,9 +110,9 @@ export default function NavBar({ navItems }: NavBarProps) {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 text-gray-800 dark:text-white bg-white dark:bg-gray-800 bg-opacity-30 backdrop-blur-md shadow-lg transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 text-gray-800 dark:text-white shadow-lg transition-all duration-300 ${
           activeSection && activeSection !== "home"
-            ? "border-b border-gray-300 border-opacity-20"
+            ? "border-b border-gray-300 border-opacity-20 bg-white dark:bg-black-100 backdrop-blur-sm"
             : "border-b border-transparent"
         }`}
         style={{
@@ -124,10 +124,10 @@ export default function NavBar({ navItems }: NavBarProps) {
             <div className="flex items-center space-x-4">
               <Link href="/" className="flex items-center space-x-2">
                 <div
-                  className={`w-8 h-8 flex items-center justify-center rounded-lg transition-colors duration-300 ${
+                  className={`w-6 h-6 flex items-center justify-center rounded-lg transition-colors duration-300 ${
                     activeSection === "" || activeSection === "home"
                       ? "bg-purple-500 rounded-md text-white"
-                      : "dark:bg-gray-800 bg-gray-300 dark:text-gray-50 text-black"
+                      : "dark:bg-gray-900 bg-gray-300 dark:text-gray-50 text-black"
                   }`}
                 >
                   /
