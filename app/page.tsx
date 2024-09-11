@@ -5,12 +5,12 @@ import Experience from "@/components/Experience"
 import Footer from "@/components/Footer"
 import Landing from "@/components/Landing"
 import NavBar from "@/components/ui/Navbar"
-import { navItems } from "@/data"
+import { navItemsHome } from "@/data"
 
 export default function Home() {
   return (
     <main className="relative bg-white dark:bg-black-100 flex flex-col overflow-clip">
-      <NavBar navItems={navItems} />
+      <NavBar navItems={navItemsHome} />
       <Landing />
       <Intro />
       <RecentProjects />
