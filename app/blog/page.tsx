@@ -43,10 +43,16 @@ export const metadata: Metadata = {
   },
 };
 
+// Updated BlogPage component with null checks
+
 export default async function BlogPage() {
   const articlesResponse = await fetchArticles();
-
   const articles = articlesResponse.data;
+
+  // Null check for data and attributes
+  if (!articles || !Array.isArray(articles)) {
+    return <div>No articles found.</div>;
+  }
 
   const featuredArticle = articles.find(
     (article: any) => article.attributes.isFeatured
@@ -74,9 +80,13 @@ export default async function BlogPage() {
                 title={featuredArticle.attributes.title}
                 description={featuredArticle.attributes.description}
                 slug={featuredArticle.attributes.slug}
-                imageUrl={`${process.env.NEXT_PUBLIC_BACKEND_URL}${featuredArticle.attributes.image.data.attributes.formats.medium.url}`}
+                imageUrl={
+                  featuredArticle.attributes.image?.data?.attributes?.formats?.medium?.url
+                    ? `${process.env.NEXT_PUBLIC_BACKEND_URL}${featuredArticle.attributes.image.data.attributes.formats.medium.url}`
+                    : '/myDp.png' // Fallback image URL
+                }
                 category={
-                  featuredArticle.attributes.category.data.attributes.name
+                  featuredArticle.attributes.category?.data?.attributes?.name || 'Unknown'
                 }
                 isFeatured={true}
               />
@@ -88,8 +98,12 @@ export default async function BlogPage() {
               title={article.attributes.title}
               description={article.attributes.description}
               slug={article.attributes.slug}
-              imageUrl={`${process.env.NEXT_PUBLIC_BACKEND_URL}${article.attributes.image.data.attributes.formats.small.url}`}
-              category={article.attributes.category.data.attributes.name}
+              imageUrl={
+                article.attributes.image?.data?.attributes?.formats?.small?.url
+                  ? `${process.env.NEXT_PUBLIC_BACKEND_URL}${article.attributes.image.data.attributes.formats.small.url}`
+                  : '/default-image.jpg' // Fallback image URL
+              }
+              category={article.attributes.category?.data?.attributes?.name || 'Unknown'}
               isFeatured={false}
             />
           ))}
