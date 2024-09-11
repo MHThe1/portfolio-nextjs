@@ -31,7 +31,7 @@ const socialMedia = [
   },
 ];
 
-const Footer = () => {
+const Footer = ({ isBlog=false }: { isBlog?: boolean }) => {
   return (
     <footer
       className="bg-white dark:bg-black-100 text-gray-600 dark:text-gray-300"
@@ -39,7 +39,7 @@ const Footer = () => {
     >
       <div className="relative w-full overflow-hidden">
         <BackgroundGrid reverse={true} />
-        <div className="container pt-32 flex flex-col items-center">
+        {!isBlog && <div className="container pt-32 flex flex-col items-center">
           <h1 className="heading lg:max-w-[45vw]">
             Ready to take <span className="text-purple-400">your</span> digital
             presence to the next level?
@@ -55,7 +55,7 @@ const Footer = () => {
               position="right"
             />
           </a>
-        </div>
+        </div> }
         <div className="container flex mt-16 md:flex-row flex-col justify-between items-center mb-4">
           <p className="mb-4 md:mb-0 md:text-base text-sm md:font-normal font-light">
             Copyright © 2024 Mehedi H Tanvir
